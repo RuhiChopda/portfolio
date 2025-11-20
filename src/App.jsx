@@ -225,7 +225,7 @@ export default function App() {
       <section id="contact" className="mt-12">
         <h2 className="text-2xl font-bold">Contact</h2>
         <p className="mt-2">
-          Email me at: <a href="mailto:ruhi@example.com" className="underline">ruhi@example.com</a>
+          Email me at: <a href="mailto:chopdaruhi9@gmail.com" className="underline">chopdaruhi9@gmail.com</a>
         </p>
       </section>
 
