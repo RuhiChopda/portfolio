@@ -217,8 +217,7 @@ export default function App() {
       <section id="about" className="mt-12">
         <h2 className="text-2xl font-bold">About</h2>
         <p className="mt-3 max-w-2xl">
-          I’m a full-stack engineer working at the intersection of AI, Web3, and product design.
-          I love building systems end-to-end from idea to production.
+         I’m a developer who blends engineering and creativity to build smart, modern, and visually engaging digital experiences. From AI-based tools and Web3 applications to dashboards, automation systems, and full-stack web apps — I focus on creating products that feel smooth, intuitive, and meaningful for users.
         </p>
       </section>
 
