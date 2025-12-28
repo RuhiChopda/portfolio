@@ -13,99 +13,158 @@ const PROJECTS = [
     highlights: [
       "Smart contracts for lending pools",
       "Collateral management and interest logic",
-      "Wallet authentication & event listeners",
+      "Wallet authentication & on-chain events",
     ],
     repo: "#",
     demo: null,
   },
+
   {
     id: "plant-disease",
     title: "AI-Powered Plant Disease Detection System",
     domain: "AI/ML",
     featured: true,
-    short: "Upload leaf images → model predicts disease and risk level.",
+    short: "Deep learning system to detect plant diseases from leaf images.",
     tech: ["Python", "Flask", "TensorFlow", "OpenCV"],
     highlights: [
-      "Custom CNN model",
-      "Image preprocessing & pipeline",
-      "Risk-level generation",
+      "Custom CNN architecture",
+      "Disease severity classification",
+      "Prevention & treatment recommendations",
     ],
     repo: "#",
     demo: null,
   },
+
   {
-    id: "steg-det",
+    id: "customer-churn",
+    title: "Customer Churn Prediction System",
+    domain: "AI/ML",
+    featured: false,
+    short: "Machine learning system to predict customer churn risk.",
+    tech: ["Python", "Scikit-learn", "Pandas", "Matplotlib"],
+    highlights: [
+      "Customer behavior analysis",
+      "Binary classification models",
+      "Business-oriented insights",
+    ],
+    repo: "#",
+    demo: null,
+  },
+
+  {
+    id: "sales-insights",
+    title: "Sales Insights & Analytics Dashboard",
+    domain: "AI/ML",
+    featured: false,
+    short: "Data analytics platform for sales performance and trends.",
+    tech: ["Python", "Pandas", "SQL", "Power BI / Tableau"],
+    highlights: [
+      "Sales trend analysis",
+      "Region & product-wise performance",
+      "Interactive dashboards",
+    ],
+    repo: "#",
+    demo: null,
+  },
+
+  {
+    id: "steganography",
     title: "Steganography Detection System",
     domain: "AI/ML",
     featured: false,
-    short: "Detect hidden information in images with ML models.",
+    short: "ML-based system to detect hidden information in images.",
     tech: ["Python", "Scikit-learn", "CNNs"],
     highlights: [
-      "Research paper & college report",
-      "Multiple experiment versions",
+      "Feature extraction techniques",
+      "Multiple experimental models",
+      "Research paper & academic report",
     ],
     repo: "#",
     demo: null,
   },
+
   {
     id: "java-chatbot",
     title: "AI-Based Java Chatbot",
     domain: "AI/ML",
     featured: false,
-    short: "DJL/OpenNLP chatbot with GUI & memory persistence.",
+    short: "Java chatbot with NLP, GUI, and persistent memory.",
     tech: ["Java", "DJL", "OpenNLP", "SQLite"],
     highlights: [
-      "GUI client",
-      "Database-backed conversation memory",
+      "GUI-based chatbot",
+      "Conversation memory storage",
+      "Intent recognition",
     ],
     repo: "#",
     demo: null,
   },
+
   {
     id: "code-editor",
     title: "AI Auto-Completion Code Editor",
     domain: "AI/ML",
     featured: false,
-    short: "Multi-language editor with AI suggestions & real-time collaboration.",
-    tech: ["WebSockets", "Monaco", "Node.js", "REST APIs"],
+    short: "Smart code editor with AI suggestions and collaboration.",
+    tech: ["Node.js", "WebSockets", "Monaco Editor", "REST APIs"],
     highlights: [
+      "AI-assisted auto-completion",
       "Real-time collaboration",
-      "AI-assisted code suggestions",
+      "Syntax & error detection",
     ],
     repo: "#",
     demo: null,
   },
+
   {
     id: "finance-tracker",
     title: "Personal Finance Tracker with AI Insights",
     domain: "AI/ML",
     featured: false,
-    short: "ML-based spending insights and pattern detection.",
+    short: "AI-powered finance tracker with spending insights.",
     tech: ["Python", "Pandas", "React", "MySQL"],
     highlights: [
-      "Spending predictions",
-      "Interactive dashboard visualizations",
+      "Spending pattern analysis",
+      "Predictive insights",
+      "Dashboard visualizations",
     ],
     repo: "#",
     demo: null,
   },
+
   {
-    id: "portfolio",
-    title: "Portfolio Website",
+    id: "pokedex",
+    title: "Pokédex Web Application",
     domain: "Web",
     featured: false,
-    short: "React + Tailwind portfolio showcasing projects and skills.",
-    tech: ["React", "Tailwind", "Vite"],
+    short: "Interactive Pokédex built using public APIs.",
+    tech: ["React", "REST APIs", "CSS"],
     highlights: [
-      "Responsive design",
+      "Dynamic Pokémon data",
+      "Search & filter functionality",
+      "Responsive UI",
+    ],
+    repo: "#",
+    demo: null,
+  },
+
+  {
+    id: "portfolio",
+    title: "Developer Portfolio Website",
+    domain: "Web",
+    featured: false,
+    short: "Personal portfolio showcasing all projects and skills.",
+    tech: ["React", "Tailwind CSS", "Vite"],
+    highlights: [
       "Project filtering & modals",
+      "Dark / light mode",
+      "Responsive modern UI",
     ],
     repo: "#",
     demo: null,
   },
 ];
 
-/* ===================== COMPONENTS ===================== */
+/* ===================== UI COMPONENTS ===================== */
 
 function Tag({ children }) {
   return (
@@ -117,9 +176,9 @@ function Tag({ children }) {
 
 function Navbar({ theme, setTheme }) {
   return (
-    <nav className="w-full py-4 flex items-center justify-between">
+    <nav className="w-full py-4 flex justify-between items-center">
       <div className="text-xl font-bold">Ruhi Chopda</div>
-      <div className="flex items-center gap-4">
+      <div className="flex gap-4 items-center">
         <a href="#projects">Projects</a>
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
@@ -140,7 +199,7 @@ function Hero() {
       <h1 className="text-4xl font-extrabold">Hi — I’m Ruhi Chopda</h1>
       <p className="mt-3 text-lg max-w-xl">
         I build end-to-end systems across <strong>AI/ML</strong>,{" "}
-        <strong>Web3</strong>, and <strong>Full-Stack Web</strong>.
+        <strong>Blockchain</strong>, and <strong>Full-Stack Web</strong>.
       </p>
       <div className="mt-6 flex gap-3">
         <a href="#projects" className="px-4 py-2 bg-sky-600 text-white rounded">
@@ -213,7 +272,7 @@ function ProjectModal({ project, onClose }) {
   return (
     <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-50">
       <div className="bg-white dark:bg-gray-900 p-6 rounded-lg w-11/12 md:w-3/4 lg:w-1/2">
-        <div className="flex justify-between items-start">
+        <div className="flex justify-between">
           <h2 className="text-2xl font-bold">{project.title}</h2>
           <button onClick={onClose} className="border px-2 py-1 rounded">
             Close
@@ -240,18 +299,9 @@ function ProjectModal({ project, onClose }) {
               View Code
             </a>
           )}
-          {project.demo ? (
-            <a
-              href={project.demo}
-              className="px-4 py-2 bg-sky-600 text-white rounded"
-            >
-              Live Demo
-            </a>
-          ) : (
-            <span className="px-4 py-2 border rounded text-gray-500">
-              Demo Unavailable
-            </span>
-          )}
+          <span className="px-4 py-2 border rounded text-gray-500">
+            Demo Unavailable
+          </span>
         </div>
       </div>
     </div>
@@ -282,7 +332,6 @@ export default function App() {
       <Navbar theme={theme} setTheme={setTheme} />
       <Hero />
 
-      {/* Featured */}
       <section className="mt-10">
         <h2 className="text-2xl font-bold">Featured Projects</h2>
         <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -292,7 +341,6 @@ export default function App() {
         </div>
       </section>
 
-      {/* All Projects */}
       <section id="projects" className="mt-12">
         <div className="flex items-center justify-between">
           <h2 className="text-2xl font-bold">Projects</h2>
@@ -309,9 +357,8 @@ export default function App() {
       <section id="about" className="mt-12 max-w-2xl">
         <h2 className="text-2xl font-bold">About</h2>
         <p className="mt-3">
-          I’m a developer focused on building clean, scalable, and impactful
-          products across AI, blockchain, backend systems, and full-stack web
-          development.
+          I build clean, scalable, and real-world systems across AI/ML,
+          blockchain, analytics, and full-stack web development.
         </p>
       </section>
 
@@ -333,4 +380,3 @@ export default function App() {
     </div>
   );
 }
-
