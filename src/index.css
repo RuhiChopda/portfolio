@@ -1,3 +1,33 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .page {
+    @apply min-h-screen bg-slate-900 text-slate-200 px-6 md:px-20 py-6;
+  }
+
+  .card {
+    @apply bg-slate-950 border border-slate-800 rounded-xl p-4 hover:shadow-sm transition;
+  }
+
+  .btn-primary {
+    @apply bg-sky-600 text-white px-4 py-2 rounded-lg hover:bg-sky-500 transition;
+  }
+
+  .btn-outline {
+    @apply border border-slate-700 px-4 py-2 rounded-lg hover:bg-slate-800 transition;
+  }
+
+  .filter-btn {
+    @apply px-3 py-1 rounded border border-slate-700 text-sm hover:bg-slate-800 transition;
+  }
+
+  .filter-btn-active {
+    @apply bg-sky-600 text-white border-sky-600;
+  }
+
+  .tag {
+    @apply px-2 py-1 text-xs rounded-full border border-slate-700;
+  }
+}
