@@ -16,7 +16,7 @@ const PROJECTS = [
   },
   {
     id: "plant-disease",
-    title: "AI-Powered Plant Disease Detection System",
+    title: "AI-Powered Plant Disease Detection and Prevention System",
     domain: "AI/ML",
     featured: true,
     short: "Deep learning system to detect plant diseases from leaf images.",
