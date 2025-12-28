@@ -205,7 +205,14 @@ function Hero() {
         <a href="#projects" className="px-4 py-2 bg-sky-600 text-white rounded">
           View Projects
         </a>
- 
+ <a
+  href="/Ruhi_Chopda_Resume_Updated.pdf"
+  download
+  className="px-4 py-2 border rounded"
+>
+  Download Resume
+</a>
+
       </div>
     </header>
   );
