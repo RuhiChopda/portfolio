@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 20% 97%;
+    --foreground: 224 71% 4%;
+    --card: 0 0% 100%;
+    --card-foreground: 224 71% 4%;
+    --primary: 245 58% 51%;
+    --primary-foreground: 210 40% 98%;
+    --muted: 220 14% 94%;
+    --muted-foreground: 220 9% 46%;
+    --border: 220 13% 88%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --radius: 0.75rem;
+    --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  }
+  .dark {
+    --background: 224 71% 4%;
+    --foreground: 210 40% 96%;
+    --card: 224 40% 7%;
+    --card-foreground: 210 40% 96%;
+    --primary: 245 58% 65%;
+    --primary-foreground: 224 71% 4%;
+    --muted: 217 32% 12%;
+    --muted-foreground: 215 20% 55%;
+    --border: 217 32% 14%;
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 0 0% 100%;
+  }
+  * { @apply border-border; }
+  html { @apply scroll-smooth; }
+  body { @apply bg-background text-foreground antialiased; }
+}
+
+@layer utilities {
+  .section { @apply py-20 px-4 sm:px-6 max-w-6xl mx-auto; }
+  .glass { @apply bg-card/60 backdrop-blur-sm border border-border/60 rounded-xl; }
+  .text-gradient { @apply bg-gradient-to-r from-indigo-400 via-purple-400 to-indigo-300 bg-clip-text text-transparent; }
+  .dot-grid {
+    background-image: radial-gradient(circle, hsl(var(--border)) 1px, transparent 1px);
+    background-size: 28px 28px;
+  }
+}
