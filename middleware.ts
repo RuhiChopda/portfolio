@@ -9,4 +9,7 @@ export default auth((req) => {
   if (isLogin && loggedIn) return NextResponse.redirect(new URL('/admin/dashboard', req.nextUrl))
 })
 
-export const config = { matcher: ['/admin/:path*'] }
+export const config = {
+  matcher: ['/admin/:path*'],
+  runtime: 'nodejs',
+}
